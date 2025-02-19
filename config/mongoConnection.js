@@ -12,8 +12,10 @@ const createConnection = async () => {
         useUnifiedTopology: true,
       });
       _db = await _connection.db(mongodbConfig.database);
+      console.log("MongoDB Atlas Connected Successfully!");
     }
   } catch (err) {
+    console.error("MongoDB Connection Error:", err);
     throw err;
   }
   return _db;
@@ -24,7 +26,9 @@ const closeConnection = async (db) => {
   try {
     await db.serverConfig.close();
     isConnectionClosed = true;
+    console.log("MongoDB Connection Closed.");
   } catch (err) {
+    console.error("Error Closing MongoDB Connection:", err);
     throw err;
   }
   return isConnectionClosed;
