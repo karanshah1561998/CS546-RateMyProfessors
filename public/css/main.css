@@ -97,3 +97,9 @@ a {
   font-size: small;
   color: gray;
 }
+
+.commentSection {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}

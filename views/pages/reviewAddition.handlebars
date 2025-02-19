@@ -1,7 +1,7 @@
 <div id="newReviewTexts">
   <h1 id="newReviewWelcome">Create a Review</h1>
   <br />
-  <h2 id="newReviewPrompt">Please fill out the review below and click Post.</h2>
+  <h2 id="newReviewPrompt">Please fill out the review below and click Post</h2>
 </div>
 <div id="newReviewFormDiv">
   <form
@@ -9,7 +9,7 @@
     id="newReviewForm"
     action="/schools/{{schoolId}}/professors/{{professorId}}/createReview"
   >
-    <div class="form-group">
+    <div class="form-group mt-2">
       <label for="reviewRatingBox">Please select your rating for the professor
         (1-5 scale where 5 is excellent and 1 is poor)</label>
       <input
@@ -26,7 +26,7 @@
       />
     </div>
 
-    <div class="form-group">
+    <div class="form-group mt-2">
       <label for="reviewDifficultyBox">Please select your difficulty rating for
         the professor (1-5 scale where 5 is hard and 1 is easy)</label>
       <input
@@ -43,7 +43,7 @@
       />
     </div>
 
-    <div class="form-group">
+    <div class="form-group mt-2">
       <label for="courseNameBox">Please enter the name of the course</label>
       <input
         type="text"
@@ -56,7 +56,7 @@
       />
     </div>
 
-    <div class="form-group">
+    <div class="form-group mt-2">
       <label for="reviewTextBox">Please enter your review</label>
       <textarea
         type="text"
@@ -72,7 +72,7 @@
     <button
       id="newReviewSubmitBtn"
       type="submit"
-      class="btn btn-primary"
+      class="btn btn-primary mt-2"
     >Post</button>
     <p class="error">
       {{error}}

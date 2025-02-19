@@ -1,11 +1,11 @@
 <div id="loginTexts">
   <h1 id="loginWelcome">Welcome to ProfChecker!</h1>
-  <h2 id="loginPrompt">Please sign in below using your email and password.</h2>
+  <h2 id="loginPrompt">Please sign in below using your email and password</h2>
 </div>
 
 <div id="loginFormDiv">
   <form method="POST" id="loginForm">
-    <div class="form-group">
+    <div class="form-group mt-3">
       <label for="emailLogin">Please enter your email address</label>
       <input
         type="email"
@@ -17,7 +17,7 @@
         value="{{username}}"
       />
     </div>
-    <div class="form-group">
+    <div class="form-group mt-2">
       <label for="passwordLogin">Please enter your password</label>
       <input
         type="password"
@@ -30,7 +30,11 @@
       />
     </div>
 
-    <button id="loginBtn" class="btn btn-primary" type="submit">Login</button>
+    <button
+      id="loginBtn"
+      class="btn btn-primary mt-2"
+      type="submit"
+    >Login</button>
 
     {{#if error}}
       <p class="error">

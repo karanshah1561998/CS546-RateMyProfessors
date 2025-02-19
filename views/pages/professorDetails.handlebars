@@ -42,10 +42,10 @@
         </li>
       </ul>
       {{/each}}
-      <label for="commentsField">Comments on this review:</label>
-      <form method="POST" action="/schools/{{../schoolId}}/professors/{{../professorId}}/{{this._id}}">
-      <textarea id="commentsField" type="text" name="commentsField" placeholder="Comment" required></textarea>
-      <button id="commentsSubmitBtn" class="btn btn-primary" type="submit">Submit</button>
+      <label class="mt-2" for="commentsField">Comments on this review:</label>
+      <form class="commentSection" method="POST" action="/schools/{{../schoolId}}/professors/{{../professorId}}/{{this._id}}">
+        <textarea id="commentsField" type="text" name="commentsField" placeholder="Comment" required></textarea>
+        <button id="commentsSubmitBtn" class="btn btn-primary mt-2" type="submit">Submit</button>
       </form>
     </li>
     {{/each}}
