@@ -12,10 +12,10 @@ const createConnection = async () => {
         useUnifiedTopology: true,
       });
       _db = await _connection.db(mongodbConfig.database);
-      console.log("MongoDB Atlas Connected Successfully!");
+      console.log("✅ MongoDB Atlas Connected Successfully!");
     }
   } catch (err) {
-    console.error("MongoDB Connection Error:", err);
+    console.error("❌ MongoDB Connection Error:", err);
     throw err;
   }
   return _db;
