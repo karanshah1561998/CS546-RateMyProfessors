@@ -1,0 +1,6 @@
+{
+  "mongodbConfig": {
+    "database": "ratemyprofessors",
+    "collections": ["Schools", "Users"]
+  }
+}

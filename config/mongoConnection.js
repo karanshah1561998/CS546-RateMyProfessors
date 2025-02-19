@@ -1,5 +1,12 @@
-const MongoClient = require("mongodb").MongoClient;
+require("dotenv").config();
+const { MongoClient } = require("mongodb");
 const mongodbConfig = require("./settings.json").mongodbConfig;
+
+const mongoURI = process.env.MONGODB_URI;
+
+if (!mongoURI) {
+  throw new Error("❌ MongoDB URI is missing. Set it in your .env file.");
+}
 
 let _connection;
 let _db;
@@ -7,11 +14,11 @@ let _db;
 const createConnection = async () => {
   try {
     if (!_connection) {
-      _connection = await MongoClient.connect(mongodbConfig.serverURL, {
+      _connection = await MongoClient.connect(mongoURI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       });
-      _db = await _connection.db(mongodbConfig.database);
+      _db = _connection.db(mongodbConfig.database);
       console.log("✅ MongoDB Atlas Connected Successfully!");
     }
   } catch (err) {
@@ -21,17 +28,18 @@ const createConnection = async () => {
   return _db;
 };
 
-const closeConnection = async (db) => {
-  let isConnectionClosed = false;
-  try {
-    await db.serverConfig.close();
-    isConnectionClosed = true;
-    console.log("MongoDB Connection Closed.");
-  } catch (err) {
-    console.error("Error Closing MongoDB Connection:", err);
-    throw err;
+const closeConnection = async () => {
+  if (_connection) {
+    try {
+      await _connection.close();
+      _connection = null;
+      _db = null;
+      console.log("✅ MongoDB Connection Closed.");
+    } catch (err) {
+      console.error("❌ Error Closing MongoDB Connection:", err);
+      throw err;
+    }
   }
-  return isConnectionClosed;
 };
 
 const getDB = async () => {
