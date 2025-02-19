@@ -1,10 +1,13 @@
 const express = require("express");
 const session = require("express-session");
+const MongoStore = require("connect-mongo");
 const nocache = require("nocache");
 const exphbs = require("express-handlebars");
 const configRoutes = require("./routes");
+require("dotenv").config(); // Load environment variables
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+const MONGO_URI = process.env.MONGO_URI; // MongoDB Atlas connection string
 
 const app = express();
 
@@ -21,7 +24,11 @@ app.use(
     name: "AuthCookie",
     secret: "some secret string!",
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
+    store: MongoStore.create({
+      mongoUrl: MONGO_URI, // Store sessions in MongoDB Atlas
+      collectionName: "sessions", // Creates a "sessions" collection in MongoDB Atlas
+    }),
   })
 );
 
