@@ -2,7 +2,7 @@ require("dotenv").config();
 const { MongoClient } = require("mongodb");
 const mongodbConfig = require("./settings.json").mongodbConfig;
 
-const mongoURI = process.env.MONGODB_URI;
+const mongoURI = process.env.MONGO_CONNECTION_STRING;
 
 if (!mongoURI) {
   throw new Error("❌ MongoDB URI is missing. Set it in your .env file.");
