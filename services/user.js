@@ -9,7 +9,7 @@ const ObjectID = require("mongodb").ObjectID;
  * output: {isInserted: boolean, userId, alreadyExists: boolean}
  */
 const addUser = async (firstName, lastName, password, email, dateJoined) => {
-  console.info("addUser() :: services :: start");
+  // console.info("addUser() :: services :: start");
   let isInserted = false;
   let userId = null;
   let alreadyExists = false;
@@ -33,7 +33,7 @@ const addUser = async (firstName, lastName, password, email, dateJoined) => {
     console.error(`${__filename} - addUser()`);
     console.error(err);
   } finally {
-    console.info("addUser() :: services :: end");
+    // console.info("addUser() :: services :: end");
     return {
       isInserted,
       userId,
@@ -49,7 +49,7 @@ const addUser = async (firstName, lastName, password, email, dateJoined) => {
  *         false - unsuccessful
  */
 const removeUser = async (id) => {
-  console.info("removeUser() :: services :: start");
+  // console.info("removeUser() :: services :: start");
   let isDeleted = false;
   try {
     validation.removeUser(id);
@@ -60,7 +60,7 @@ const removeUser = async (id) => {
     console.error(`${__filename} - removeUser()`);
     console.error(err);
   } finally {
-    console.info("removeUser() :: services :: end");
+    // console.info("removeUser() :: services :: end");
     return isDeleted;
   }
 };
@@ -71,7 +71,7 @@ const removeUser = async (id) => {
  * output: array
  */
 const getUsersById = async (userIds) => {
-  console.info("getUsersById() :: services :: start");
+  // console.info("getUsersById() :: services :: start");
   let result = [];
   try {
     validation.getUsersById(userIds);
@@ -81,7 +81,7 @@ const getUsersById = async (userIds) => {
     console.error(`${__filename} - getUsersById()`);
     console.error(err);
   } finally {
-    console.info("getUsersById() :: services :: end");
+    // console.info("getUsersById() :: services :: end");
     return result;
   }
 };
@@ -95,7 +95,7 @@ const getUsersById = async (userIds) => {
  *         -9 - db error
  */
 const checkLogin = async (userId, password) => {
-  console.info("checkLogin() :: services :: start");
+  // console.info("checkLogin() :: services :: start");
   let result = -9;
   try {
     validation.checkLogin(userId, password);
@@ -104,7 +104,7 @@ const checkLogin = async (userId, password) => {
     console.error(`${__filename} - checkLogin()`);
     console.error(err);
   } finally {
-    console.info("checkLogin() :: services :: end");
+    // console.info("checkLogin() :: services :: end");
     return result;
   }
 };

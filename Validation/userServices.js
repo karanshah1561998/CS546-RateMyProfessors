@@ -10,7 +10,7 @@ const isValidIds = (userIds) =>
 const isValidObjectId = (id) => ObjectId(id.toString());
 
 const addUser = (firstName, lastName, email, password, passwordConfirm) => {
-  console.log("addUser() Validation Start");
+  // console.log("addUser() Validation Start");
   const errors = [];
   if (!isNonEmptyString(firstName))
     errors.push("First Name must be a non-empty string!");
@@ -22,11 +22,11 @@ const addUser = (firstName, lastName, email, password, passwordConfirm) => {
     errors.push("Password must be a non-empty string!");
   if (password !== passwordConfirm) errors.push("Passwords do not match!");
   if (errors.length) throw errors;
-  console.log("addUser() Validation End");
+  // console.log("addUser() Validation End");
 };
 
 const addUserBE = (firstName, lastName, password, email) => {
-  console.log("addUser() Validation Start");
+  // console.log("addUser() Validation Start");
   const errors = [];
   if (!isNonEmptyString(firstName))
     errors.push("First Name must be a non-empty string!");
@@ -37,35 +37,35 @@ const addUserBE = (firstName, lastName, password, email) => {
   if (!isNonEmptyString(password))
     errors.push("Password must be a non-empty string!");
   if (errors.length) throw errors;
-  console.log("addUser() Validation End");
+  // console.log("addUser() Validation End");
 };
 
 const removeUser = (id) => {
-  console.log("removeUser() Validation Start");
+  // console.log("removeUser() Validation Start");
   const errors = [];
   if (!isValidId(id)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(id)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("removeUser() Validation End");
+  // console.log("removeUser() Validation End");
 };
 
 const getUsersById = (userId) => {
-  console.log("getUserById() Validation Start");
+  // console.log("getUserById() Validation Start");
   const errors = [];
   if (!isValidId(userId)) errors.push("You must provide valid ID");
   if (!isValidObjectId(userId)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("getUserById() Validation End");
+  // console.log("getUserById() Validation End");
 };
 
 const checkLogin = (email, password) => {
-  console.log("In checkLogin Validation Start");
+  // console.log("In checkLogin Validation Start");
   const errors = [];
   if (!isValidEmail(email)) errors.push("Invalid Email!");
   if (!isNonEmptyString(password))
     errors.push("Password must be a non-empty string!");
   if (errors.length) throw errors;
-  console.log("In checkLogin Validation End");
+  // console.log("In checkLogin Validation End");
 };
 
 module.exports = {

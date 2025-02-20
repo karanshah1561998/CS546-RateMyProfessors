@@ -17,7 +17,7 @@ const addSchool = async (
   zipcode,
   addedBy
 ) => {
-  console.info("addSchool() :: services :: start");
+  // console.info("addSchool() :: services :: start");
 
   let isSchoolInserted = false;
   let isSchoolAddedToUser = false;
@@ -47,7 +47,7 @@ const addSchool = async (
     console.error(err);
     duplicateSchool = true;
   } finally {
-    console.info("addSchool() :: services :: end");
+    // console.info("addSchool() :: services :: end");
     return { isSchoolAddedToUser, insertedId, duplicateSchool };
   }
 };
@@ -59,7 +59,7 @@ const addSchool = async (
  *         false - if unsuccessful
  */
 const removeSchool = async (schoolId) => {
-  console.info("removeSchool() :: services :: start");
+  // console.info("removeSchool() :: services :: start");
   isDeleted = false;
   try {
     validation.removeSchool(schoolId);
@@ -81,7 +81,7 @@ const removeSchool = async (schoolId) => {
     console.error(`${__filename} - removeSchool()`);
     console.error(err);
   } finally {
-    console.info("removeSchool() :: services :: end");
+    // console.info("removeSchool() :: services :: end");
     return isDeleted;
   }
 };
@@ -92,7 +92,7 @@ const removeSchool = async (schoolId) => {
  * output: array
  */
 const getAllSchools = async () => {
-  console.info("getAllSchools() :: services :: start");
+  // console.info("getAllSchools() :: services :: start");
   let result = [];
   try {
     result = await schoolData.getAllSchools();
@@ -106,7 +106,7 @@ const getAllSchools = async () => {
     console.error(`${__filename} - getAllSchools()`);
     console.error(err);
   } finally {
-    console.info("getAllSchools() :: services :: end");
+    // console.info("getAllSchools() :: services :: end");
     return result;
   }
 };
@@ -117,7 +117,7 @@ const getAllSchools = async () => {
  * output: array
  */
 const getSchoolsById = async (schoolIds) => {
-  console.info("getSchoolsById() :: services :: start");
+  // console.info("getSchoolsById() :: services :: start");
   let result = [];
   try {
     validation.getSchoolsById(schoolIds);
@@ -126,7 +126,7 @@ const getSchoolsById = async (schoolIds) => {
     console.error(`${__filename} - getSchoolsById()`);
     console.error(err);
   } finally {
-    console.info("getSchoolsById() :: services :: end");
+    // console.info("getSchoolsById() :: services :: end");
     return result;
   }
 };
@@ -144,7 +144,7 @@ const addProfessorToSchool = async (
   schoolId,
   courses = []
 ) => {
-  console.info("addProfessorToSchool() :: services :: start");
+  // console.info("addProfessorToSchool() :: services :: start");
   let isProfessorAdded = false;
   let result = null;
   let id = null;
@@ -162,7 +162,7 @@ const addProfessorToSchool = async (
     console.error(`${__filename} - addProfessorToSchool()`);
     console.error(err);
   } finally {
-    console.info("addProfessorToSchool() :: services :: end");
+    // console.info("addProfessorToSchool() :: services :: end");
     return { id: result.id, isProfessorAdded: isProfessorAdded };
   }
 };
@@ -174,7 +174,7 @@ const addProfessorToSchool = async (
  *         false - if unsuccessful
  */
 const removeProfessorFromSchool = async (schoolId, professorId) => {
-  console.info("removeProfessorFromSchool() :: services :: start");
+  // console.info("removeProfessorFromSchool() :: services :: start");
   let isProfessorRemoved = false;
   try {
     validation.removeProfessorFromSchool(schoolId, professorId);
@@ -188,7 +188,7 @@ const removeProfessorFromSchool = async (schoolId, professorId) => {
     console.error(`${__filename} - removeProfessorFromSchool()`);
     console.error(err);
   } finally {
-    console.info("removeProfessorFromSchool() :: services :: end");
+    // console.info("removeProfessorFromSchool() :: services :: end");
     return isProfessorRemoved;
   }
 };
@@ -199,7 +199,7 @@ const removeProfessorFromSchool = async (schoolId, professorId) => {
  * output: array of professors (doesn't include reviews. to get reviews of professors along with other content, use getProfessorsById())
  */
 const getAllProfessorsFromSchool = async (schoolId) => {
-  console.info("getAllProfessorsFromSchool() :: services :: start");
+  // console.info("getAllProfessorsFromSchool() :: services :: start");
   let professors = [];
   try {
     validation.getAllProfessorsFromSchool(schoolId);
@@ -209,7 +209,7 @@ const getAllProfessorsFromSchool = async (schoolId) => {
     console.error(`${__filename} - getAllProfessorsFromSchool()`);
     console.error(err);
   } finally {
-    console.info("getAllProfessorsFromSchool() :: services :: end");
+    // console.info("getAllProfessorsFromSchool() :: services :: end");
     return professors;
   }
 };
@@ -220,7 +220,7 @@ const getAllProfessorsFromSchool = async (schoolId) => {
  * output: array of professors
  */
 const getProfessorsById = async (professorIds) => {
-  console.info("getProfessorsById() :: services :: start");
+  // console.info("getProfessorsById() :: services :: start");
   let professorsList = [];
   try {
     validation.getProfessorsById(professorIds);
@@ -233,7 +233,7 @@ const getProfessorsById = async (professorIds) => {
     console.error(`${__filename} - getProfessorsById()`);
     console.error(err);
   } finally {
-    console.info("getProfessorsById() :: services :: end");
+    // console.info("getProfessorsById() :: services :: end");
     return professorsList;
   }
 };
@@ -254,7 +254,7 @@ const addReviewToProfessor = async (
   schoolId,
   userId
 ) => {
-  console.info("addReviewToProfessor() :: services :: start");
+  // console.info("addReviewToProfessor() :: services :: start");
   let isReviewAddedToProfessor = false;
   let isReviewAddedToUser = false;
   try {
@@ -299,7 +299,7 @@ const addReviewToProfessor = async (
     console.error(`${__filename} - addReviewToProfessor()`);
     console.error(err);
   } finally {
-    console.info("addReviewToProfessor() :: services :: end");
+    // console.info("addReviewToProfessor() :: services :: end");
     return isReviewAddedToUser;
   }
 };
@@ -311,7 +311,7 @@ const addReviewToProfessor = async (
               false - unsuccessful
 */
 const removeReviewFromProfessor = async (professorId, reviewId, userId) => {
-  console.info("removeReviewFromProfessor() :: services :: start");
+  // console.info("removeReviewFromProfessor() :: services :: start");
   let isReviewRemovedFromProfessor = false;
   let isReviewRemovedFromUser = false;
   let isReviewAddedToUserOnFailure = false;
@@ -347,7 +347,7 @@ const removeReviewFromProfessor = async (professorId, reviewId, userId) => {
     console.error(`${__filename} - removeReviewFromProfessor()`);
     console.error(err);
   } finally {
-    console.info("removeReviewFromProfessor() :: services :: end");
+    // console.info("removeReviewFromProfessor() :: services :: end");
     // console.log(isReviewRemovedFromProfessor, isReviewAddedToUserOnFailure);
     return isReviewRemovedFromProfessor && !isReviewAddedToUserOnFailure;
   }
@@ -360,7 +360,7 @@ const removeReviewFromProfessor = async (professorId, reviewId, userId) => {
               false - unsuccessful
 */
 const addThumbsUpToReview = async (schoolId, professorId, reviewId, userId) => {
-  console.info("addThumbsUpToReview() :: services :: start");
+  // console.info("addThumbsUpToReview() :: services :: start");
   isThumbsUpAddedToReview = false;
   try {
     validation.addThumbsUpToReview(schoolId, professorId, reviewId, userId);
@@ -383,7 +383,7 @@ const addThumbsUpToReview = async (schoolId, professorId, reviewId, userId) => {
     console.error(`${__filename} - addThumbsUpToReview()`);
     console.error(err);
   } finally {
-    console.info("addThumbsUpToReview() :: services :: end");
+    // console.info("addThumbsUpToReview() :: services :: end");
     return isThumbsUpAddedToReview;
   }
 };
@@ -400,7 +400,7 @@ const removeThumbsUpFromReview = async (
   reviewId,
   userId
 ) => {
-  console.info("removeThumbsUpFromReview() :: services :: start");
+  // console.info("removeThumbsUpFromReview() :: services :: start");
   isThumbsUpRemovedFromReview = false;
   try {
     validation.removeThumbsUpFromReview(
@@ -422,7 +422,7 @@ const removeThumbsUpFromReview = async (
     console.error(`${__filename} - removeThumbsUpFromReview()`);
     console.error(err);
   } finally {
-    console.info("removeThumbsUpFromReview() :: services :: end");
+    // console.info("removeThumbsUpFromReview() :: services :: end");
     return isThumbsUpRemovedFromReview;
   }
 };
@@ -439,7 +439,7 @@ const addThumbsDownToReview = async (
   reviewId,
   userId
 ) => {
-  console.info("addThumbsDownToReview() :: services :: start");
+  // console.info("addThumbsDownToReview() :: services :: start");
   isThumbsDownAddedToReview = false;
   try {
     validation.addThumbsDownToReview(schoolId, professorId, reviewId, userId);
@@ -461,7 +461,7 @@ const addThumbsDownToReview = async (
     console.error(`${__filename} - addThumbsDownToReview()`);
     console.error(err);
   } finally {
-    console.info("addThumbsDownToReview() :: services :: end");
+    // console.info("addThumbsDownToReview() :: services :: end");
     return isThumbsDownAddedToReview;
   }
 };
@@ -478,7 +478,7 @@ const removeThumbsDownFromReview = async (
   reviewId,
   userId
 ) => {
-  console.info("removeThumbsDownFromReview() :: services :: start");
+  // console.info("removeThumbsDownFromReview() :: services :: start");
   isThumbsDownRemovedFromReview = false;
   try {
     validation.removeThumbsDownFromReview(
@@ -499,7 +499,7 @@ const removeThumbsDownFromReview = async (
     console.error(`${__filename} - removeThumbsDownFromReview()`);
     console.error(err);
   } finally {
-    console.info("removeThumbsDownFromReview() :: services :: end");
+    // console.info("removeThumbsDownFromReview() :: services :: end");
     return isThumbsDownRemovedFromReview;
   }
 };
@@ -518,7 +518,7 @@ const addCommentToReview = async (
   reviewId,
   userId
 ) => {
-  console.info("addCommentToReview() :: services :: start");
+  // console.info("addCommentToReview() :: services :: start");
   let isCommentAddedToReview = false;
   let isCommentAddedToUser = false;
   try {
@@ -565,7 +565,7 @@ const addCommentToReview = async (
     console.error(`${__filename} - addCommentToReview()`);
     console.error(err);
   } finally {
-    console.info("addCommentToReview() :: services :: end");
+    // console.info("addCommentToReview() :: services :: end");
     return isCommentAddedToUser;
   }
 };
@@ -583,7 +583,7 @@ const removeCommentFromReview = async (
   commentId,
   userId
 ) => {
-  console.info("removeCommentFromReview() :: services :: start");
+  // console.info("removeCommentFromReview() :: services :: start");
   let isCommentRemovedFromReview = false;
   let isCommentRemovedFromUser = false;
   let isCommentAddedToUserOnFailure = false;
@@ -631,7 +631,7 @@ const removeCommentFromReview = async (
     console.error(`${__filename} - removeCommentFromReview()`);
     console.error(err);
   } finally {
-    console.info("removeCommentFromReview() :: services :: end");
+    // console.info("removeCommentFromReview() :: services :: end");
     return isCommentRemovedFromReview && !isCommentAddedToUserOnFailure;
   }
 };

@@ -16,7 +16,7 @@ const isValidZipcode = (num) =>
   num && /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(num) && typeof num === "number";
 
 const addSchool = (name, educationLevel, city, state, zipcode, addedBy) => {
-  console.log("In addSchool Validation Start");
+  // // console.log("In addSchool Validation Start");
   const errors = [];
   if (!isNonEmptyString(name)) errors.push("Name must be a non-empty string!");
   if (!isNonEmptyString(educationLevel))
@@ -29,30 +29,30 @@ const addSchool = (name, educationLevel, city, state, zipcode, addedBy) => {
   if (!isValidId(addedBy)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(addedBy)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("In addSchool Validation End");
+  // // console.log("In addSchool Validation End");
 };
 
 const removeSchool = (schoolId) => {
-  console.log("In removeSchool Validation Start");
+  // // console.log("In removeSchool Validation Start");
   const errors = [];
   if (!isValidId(schoolId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(schoolId)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("In removeSchool Validation End");
+  // // console.log("In removeSchool Validation End");
 };
 
 const getSchoolsById = (schoolId) => {
-  console.log("In getSchoolsById Validation Start");
+  // console.log("In getSchoolsById Validation Start");
   const errors = [];
   if (Array.isArray(schoolId))
     if (!isValidIds(schoolId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(schoolId)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("In getSchoolsById Validation End");
+  // console.log("In getSchoolsById Validation End");
 };
 
 const addProfessorToSchool = (firstName, lastName, schoolId) => {
-  console.log("In addProfessorToSchool Validation Start");
+  // console.log("In addProfessorToSchool Validation Start");
   const errors = [];
   if (!isNonEmptyString(firstName))
     errors.push("First Name must be a non-empty string!");
@@ -61,37 +61,37 @@ const addProfessorToSchool = (firstName, lastName, schoolId) => {
   if (!isValidId(schoolId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(schoolId)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("In addProfessorToSchool Validation End");
+  // console.log("In addProfessorToSchool Validation End");
 };
 
 const removeProfessorFromSchool = (schoolId, professorId) => {
-  console.log("In removeProfessorFromSchool Validation Start");
+  // console.log("In removeProfessorFromSchool Validation Start");
   const errors = [];
   if (!isValidId(schoolId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(schoolId)) errors.push("Invalid Object ID!");
   if (!isValidId(professorId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(professorId)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("In removeProfessorFromSchool Validation End");
+  // console.log("In removeProfessorFromSchool Validation End");
 };
 
 const getAllProfessorsFromSchool = (schoolId) => {
-  console.log("In getAllProfessorsFromSchool Validation Start");
+  // console.log("In getAllProfessorsFromSchool Validation Start");
   const errors = [];
   if (!isValidId(schoolId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(schoolId)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("In getAllProfessorsFromSchool Validation End");
+  // console.log("In getAllProfessorsFromSchool Validation End");
 };
 
 const getProfessorsById = (professorId) => {
-  console.log("In getProfessorsById Validation Start");
+  // console.log("In getProfessorsById Validation Start");
   const errors = [];
   if (Array.isArray(professorId))
     if (!isValidIds(professorId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(professorId)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("In getProfessorsById Validation End");
+  // console.log("In getProfessorsById Validation End");
 };
 
 const addReviewToProfessor = (
@@ -103,7 +103,7 @@ const addReviewToProfessor = (
   professorId,
   schoolId
 ) => {
-  console.log("In addReviewToProfessor Validation Start");
+  // console.log("In addReviewToProfessor Validation Start");
   const errors = [];
   if (!isValidRating(rating))
     errors.push("Rating must be a number between 1 and 5!");
@@ -119,11 +119,11 @@ const addReviewToProfessor = (
   if (!isValidId(schoolId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(schoolId)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("In addReviewToProfessor Validation End");
+  // console.log("In addReviewToProfessor Validation End");
 };
 
 const removeReviewFromProfessor = (professorId, reviewId) => {
-  console.log("In removeReviewFromProfessor Validation Start");
+  // console.log("In removeReviewFromProfessor Validation Start");
   const errors = [];
   if (!isValidId(professorId))
     errors.push("You must provide valid professor ID!");
@@ -132,21 +132,21 @@ const removeReviewFromProfessor = (professorId, reviewId) => {
   if (!isValidId(reviewId)) errors.push("You must provide valid Review ID!");
   if (!isValidObjectId(reviewId)) errors.push("Invalid Object Review ID!");
   if (errors.length) throw errors;
-  console.log("In removeReviewFromProfessor Validation End");
+  // console.log("In removeReviewFromProfessor Validation End");
 };
 
 const getReviewsById = (userId) => {
-  console.log("In getReviewsById Validation Start");
+  // console.log("In getReviewsById Validation Start");
   const errors = [];
   if (Array.isArray(userId))
     if (!isValidIds(userId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(userId)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("In getReviewsById Validation End");
+  // console.log("In getReviewsById Validation End");
 };
 
 const addThumbsUpToReview = async (schoolId, professorId, reviewId, userId) => {
-  console.log("In addThumbsUpToReview Validation Start");
+  // console.log("In addThumbsUpToReview Validation Start");
   const errors = [];
   if (!isValidId(schoolId)) errors.push("You must provide valid Review ID!");
   if (!isValidObjectId(schoolId)) errors.push("Invalid Object Review ID!");
@@ -159,7 +159,7 @@ const addThumbsUpToReview = async (schoolId, professorId, reviewId, userId) => {
   if (!isValidId(userId)) errors.push("You must provide valid User ID!");
   if (!isValidObjectId(userId)) errors.push("Invalid Object User ID!");
   if (errors.length) throw errors;
-  console.log("In addThumbsUpToReview Validation End");
+  // console.log("In addThumbsUpToReview Validation End");
 };
 
 const removeThumbsUpFromReview = async (
@@ -168,7 +168,7 @@ const removeThumbsUpFromReview = async (
   reviewId,
   userId
 ) => {
-  console.log("In removeThumbsUpFromReview Validation Start");
+  // console.log("In removeThumbsUpFromReview Validation Start");
   const errors = [];
   if (!isValidId(schoolId)) errors.push("You must provide valid Review ID!");
   if (!isValidObjectId(schoolId)) errors.push("Invalid Object Review ID!");
@@ -181,7 +181,7 @@ const removeThumbsUpFromReview = async (
   if (!isValidId(userId)) errors.push("You must provide valid User ID!");
   if (!isValidObjectId(userId)) errors.push("Invalid Object User ID!");
   if (errors.length) throw errors;
-  console.log("In removeThumbsUpFromReview Validation End");
+  // console.log("In removeThumbsUpFromReview Validation End");
 };
 
 const addThumbsDownToReview = async (
@@ -190,7 +190,7 @@ const addThumbsDownToReview = async (
   reviewId,
   userId
 ) => {
-  console.log("In addThumbsDownToReview Validation Start");
+  // console.log("In addThumbsDownToReview Validation Start");
   const errors = [];
   if (!isValidId(schoolId)) errors.push("You must provide valid Review ID!");
   if (!isValidObjectId(schoolId)) errors.push("Invalid Object Review ID!");
@@ -203,7 +203,7 @@ const addThumbsDownToReview = async (
   if (!isValidId(userId)) errors.push("You must provide valid User ID!");
   if (!isValidObjectId(userId)) errors.push("Invalid Object User ID!");
   if (errors.length) throw errors;
-  console.log("In addThumbsDownToReview Validation End");
+  // console.log("In addThumbsDownToReview Validation End");
 };
 
 const removeThumbsDownFromReview = async (
@@ -212,7 +212,7 @@ const removeThumbsDownFromReview = async (
   reviewId,
   userId
 ) => {
-  console.log("In removeThumbsDownFromReview Validation Start");
+  // console.log("In removeThumbsDownFromReview Validation Start");
   const errors = [];
   if (!isValidId(schoolId)) errors.push("You must provide valid Review ID!");
   if (!isValidObjectId(schoolId)) errors.push("Invalid Object Review ID!");
@@ -225,7 +225,7 @@ const removeThumbsDownFromReview = async (
   if (!isValidId(userId)) errors.push("You must provide valid User ID!");
   if (!isValidObjectId(userId)) errors.push("Invalid Object User ID!");
   if (errors.length) throw errors;
-  console.log("In removeThumbsDownFromReview Validation End");
+  // console.log("In removeThumbsDownFromReview Validation End");
 };
 
 const addCommentToReview = (
@@ -252,7 +252,7 @@ const addCommentToReview = (
     errors.push("You must provide valid User ID!");
   if (!isValidObjectId(userId)) errors.push("Invalid Object User ID!");
   if (errors.length) throw errors;
-  console.log("In addCommentToReview Validation End");
+  // console.log("In addCommentToReview Validation End");
 };
 
 const removeCommentFromReview = (
@@ -261,7 +261,7 @@ const removeCommentFromReview = (
   reviewId,
   commentId
 ) => {
-  console.log("In removeCommentFromReview Validation Start");
+  // console.log("In removeCommentFromReview Validation Start");
   const errors = [];
   if (!isValidId(schoolId)) errors.push("You must provide valid professor ID!");
   if (!isValidObjectId(schoolId)) errors.push("Invalid School Object ID!");
@@ -274,17 +274,17 @@ const removeCommentFromReview = (
   if (!isValidId(commentId)) errors.push("You must provide valid User ID!");
   if (!isValidObjectId(commentId)) errors.push("Invalid Object User ID!");
   if (errors.length) throw errors;
-  console.log("In removeCommentFromReview Validation End");
+  // console.log("In removeCommentFromReview Validation End");
 };
 
 const getCommentsById = (commentId) => {
-  console.log("In getCommentsById Validation Start");
+  // console.log("In getCommentsById Validation Start");
   const errors = [];
   if (Array.isArray(commentId))
     if (!isValidIds(commentId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(commentId)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("In getCommentsById Validation End");
+  // console.log("In getCommentsById Validation End");
 };
 
 module.exports = {

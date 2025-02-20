@@ -15,7 +15,7 @@ const isValidZipcode = (num) =>
   num && /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(num) && typeof num === "number";
 
 const addUser = (firstName, lastName, password, email) => {
-  console.log("In addUser Validation Start");
+  // console.log("In addUser Validation Start");
   const errors = [];
   if (!isNonEmptyString(firstName))
     errors.push("First Name must be a non-empty string!");
@@ -26,150 +26,150 @@ const addUser = (firstName, lastName, password, email) => {
   if (!isValidEmail(email))
     errors.push("You have entered an invalid email address!");
   if (errors.length) throw errors;
-  console.log("In addUser Validation End");
+  // console.log("In addUser Validation End");
 };
 
 const removeUser = (id) => {
-  console.log("In removeUser Validation Start");
+  // console.log("In removeUser Validation Start");
   const errors = [];
   if (!isValidId(id)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(id)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("In removeUser Validation End");
+  // console.log("In removeUser Validation End");
 };
 
 const getUsersById = (userId) => {
-  console.log("In getUsersById Validation Start");
-  // console.log(userId);
-  // console.log(typeof userId);
+  // console.log("In getUsersById Validation Start");
+  // // console.log(userId);
+  // // console.log(typeof userId);
   const errors = [];
   // if (!isValidIds(userIds)) errors.push("You must provide valid ID!");
   if (!isValidId(userId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(userId)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("In getUsersById Validation End");
+  // console.log("In getUsersById Validation End");
 };
 
 const checkLogin = (email, password) => {
-  console.log("In checkLogin Validation Start");
+  // console.log("In checkLogin Validation Start");
   const errors = [];
   if (!isValidEmail(email))
     errors.push("You have entered an invalid email address!");
   if (!isNonEmptyString(password))
     errors.push("Password must be a non-empty string!");
   if (errors.length) throw errors;
-  console.log("In checkLogin Validation End");
+  // console.log("In checkLogin Validation End");
 };
 
 const addReviewToUser = (userId, reviewId) => {
-  console.log("In addReviewToUser Validation Start");
+  // console.log("In addReviewToUser Validation Start");
   const errors = [];
   if (!isValidId(userId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(userId)) errors.push("Invalid Object ID!");
   if (!isValidId(reviewId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(reviewId)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("In addReviewToUser Validation End");
+  // console.log("In addReviewToUser Validation End");
 };
 
 const deleteReviewFromUser = (userId, reviewId) => {
-  console.log("In deleteReviewFromUser Validation Start");
+  // console.log("In deleteReviewFromUser Validation Start");
   const errors = [];
   if (!isValidId(userId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(userId)) errors.push("Invalid Object ID!");
   if (!isValidId(reviewId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(reviewId)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("In deleteReviewFromUser Validation End");
+  // console.log("In deleteReviewFromUser Validation End");
 };
 
 const getAllReviewsIdsMadeByUsers = (userId) => {
-  console.log("In getAllReviewsIdsMadeByUsers Validation Start");
+  // console.log("In getAllReviewsIdsMadeByUsers Validation Start");
   const errors = [];
   if (!isValidIds(userId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(userId)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("In getAllReviewsIdsMadeByUsers Validation End");
+  // console.log("In getAllReviewsIdsMadeByUsers Validation End");
 };
 
 const getAllReviewsContentMadeByUsers = (userId) => {
-  console.log("In getAllReviewsContentMadeByUsers Validation Start");
+  // console.log("In getAllReviewsContentMadeByUsers Validation Start");
   const errors = [];
   if (!isValidIds(userId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(userId)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("In getAllReviewsContentMadeByUsers Validation End");
+  // console.log("In getAllReviewsContentMadeByUsers Validation End");
 };
 
 const addSchoolToUser = (userId, schoolId) => {
-  console.log("In addSchoolToUser Validation Start");
+  // console.log("In addSchoolToUser Validation Start");
   const errors = [];
   if (!isValidId(userId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(userId)) errors.push("Invalid Object ID!");
   if (!isValidId(schoolId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(schoolId)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("In addSchoolToUser Validation End");
+  // console.log("In addSchoolToUser Validation End");
 };
 
 const deleteSchoolFromUser = (userId, schoolId) => {
-  console.log("In deleteSchoolFromUser Validation Start");
+  // console.log("In deleteSchoolFromUser Validation Start");
   const errors = [];
   if (!isValidId(schoolId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(schoolId)) errors.push("Invalid Object ID!");
   if (!isValidId(userId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(userId)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("In deleteSchoolFromUser Validation End");
+  // console.log("In deleteSchoolFromUser Validation End");
 };
 
 const getAllSchoolsAddedByUsers = (userId) => {
-  console.log("In getAllSchoolsAddedByUsers Validation Start");
+  // console.log("In getAllSchoolsAddedByUsers Validation Start");
   const errors = [];
   if (!isValidIds(userId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(userId)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("In getAllSchoolsAddedByUsers Validation End");
+  // console.log("In getAllSchoolsAddedByUsers Validation End");
 };
 
 const getUserIdWhoAddedSchoolId = (schoolId) => {
-  console.log("In getUserIdWhoAddedSchoolId Validation Start");
+  // console.log("In getUserIdWhoAddedSchoolId Validation Start");
   const errors = [];
   if (!isValidId(schoolId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(schoolId)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("In getUserIdWhoAddedSchoolId Validation End");
+  // console.log("In getUserIdWhoAddedSchoolId Validation End");
 };
 
 const addCommentToUser = (userId, commentId) => {
-  console.log("In addCommentToUser Validation Start");
+  // console.log("In addCommentToUser Validation Start");
   const errors = [];
   if (!isValidId(userId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(userId)) errors.push("Invalid Object ID!");
   if (!isValidId(commentId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(commentId)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("In addCommentToUser Validation End");
+  // console.log("In addCommentToUser Validation End");
 };
 
 const deleteCommentFromUser = (userId, commentId) => {
-  console.log("In deleteCommentFromUser Validation Start");
+  // console.log("In deleteCommentFromUser Validation Start");
   const errors = [];
   if (!isValidId(userId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(userId)) errors.push("Invalid Object ID!");
   if (!isValidId(commentId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(commentId)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("In deleteCommentFromUser Validation End");
+  // console.log("In deleteCommentFromUser Validation End");
 };
 
 const getAllCommentsLeftByUsers = (userId) => {
-  console.log("In getAllCommentsLeftByUsers Validation Start");
+  // console.log("In getAllCommentsLeftByUsers Validation Start");
   const errors = [];
   if (!isValidIds(userId)) errors.push("You must provide valid ID!");
   if (!isValidObjectId(userId)) errors.push("Invalid Object ID!");
   if (errors.length) throw errors;
-  console.log("In getAllCommentsLeftByUsers Validation End");
+  // console.log("In getAllCommentsLeftByUsers Validation End");
 };
 
 module.exports = {
