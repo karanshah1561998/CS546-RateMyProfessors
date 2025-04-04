@@ -1,95 +1,87 @@
-# CS546-RateMyProfessors
+# 🎓 CS546-RateMyProfessors
 
-A **Rate My Professors** web application where students can **search for professors, leave reviews, and view ratings**. This project was built as part of the **CS-546** course.
+A full-stack Rate My Professors clone where students can search professors, view ratings, and leave reviews. Built as a part of the CS-546 Web Programming course using Node.js, Express, MongoDB, and Handlebars.
 
-## 🌍 **Live Demo**
-You can view the live website on Render:  🔗 **[CS546 RateMyProfessors](https://cs546-ratemyprofessors.onrender.com/)**
+## 🚀 Live Demo
+Access the live app here: **[CS546 RateMyProfessors](https://cs546-ratemyprofessors.onrender.com/)**
 
----
+## ✨ Features
+- Search Professors by name or school
+- Rate Professors by difficulty & quality
+- Write Reviews with thumbs-up/down
+- User Authentication (Signup/Login)
+- Session Management using MongoDB session store
+- MongoDB Atlas for secure data persistence
+- Deployed on Render
 
-## **✨ Features**
-1️⃣ **Search Professors:** Easily find professors by name or school.  
-2️⃣ **Rate Professors:** Leave ratings based on difficulty & quality.  
-3️⃣ **Submit Reviews:** Share feedback with written reviews & thumbs-up/down.  
-4️⃣ **User Authentication:** Secure **login & signup** system.  
-5️⃣ **MongoDB Atlas:** All data is stored securely in **MongoDB Atlas**.  
-6️⃣ **Session Management:** User sessions persist with **MongoDB session storage**.  
-7️⃣ **Deployed on Render:** Fully hosted & accessible online.  
+## 🛠 Tech Stack
+- Frontend: Handlebars, HTML, CSS
+- Backend: Node.js, Express.js
+- Database: MongoDB Atlas
+- Deployment: Render
 
----
+## ⚙️ Installation
+### Prerequisites
+**Ensure you have the following installed:**
+- Node.js (v18+)
+- MongoDB (Atlas)
 
-## **🎮 How to Use**
-- **Search for a professor** by entering a name or selecting a school.  
-- **Click on a professor** to view their ratings & student reviews.  
-- **Sign up or log in** to leave a rating & review.  
-- **Give a thumbs-up/down** to other student reviews.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/karanshah1561998/CS546-RateMyProfessors.git
+   cd CS546-RateMyProfessors
 
----
+2. **Install dependencies:**
+   ```bash
+   npm install
 
-## ⚙️ Installation Instructions  
-To run the project **locally**, follow these steps:  
+3. **Set up environment variables:**
+   Create a `.env` file in the directory and add:
+   ```bash
+   PORT = 3000
+   MONGO_URI = your_mongodb_uri
 
-### 1️⃣ Clone the Repository  
-```bash  
-git clone https://github.com/karanshah1561998/CS546-RateMyProfessors.git  
-cd CS546-RateMyProfessors
-```
+4. **Seed the Database**
+   If you need sample data, run:  
+   ```bash  
+   npm run seed
 
-### 2️⃣ Install Dependencies  
-```bash  
-npm install
-``` 
+4. **Start the backend server:**
+   ```bash
+   npm start
 
-### 3️⃣ Set Up Environment Variables  
-Create a `.env` file in the project root and add:  
-```bash  
-MONGO_URI=mongodb+srv://<username>:<password>@easynotes.ite0m.mongodb.net/ratemyprofessors?retryWrites=true&w=majority  
-PORT=3000
-```
+   OR for dev mode:
+   npm run start:dev
 
-🔹 Replace `<username>` and `<password>` with your **MongoDB Atlas credentials**.  
+   Open http://localhost:3000 to view the app in your browser.
 
-### 4️⃣ Seed the Database (Optional)  
-If you need sample data, run:  
-```bash  
-npm run seed
-```
+## 🧩 Troubleshooting
 
-### 5️⃣ Start the Application  
-```bash  
-npm start
-```
-or run in development mode:  
-```bash  
-npm run start:dev
-```
+### 1. MongoDB Connection Fails
+- Ensure your `MONGO_URI` in the `.env` file is correct.
+- Make sure your MongoDB Atlas cluster is active.
+- Verify that your IP is whitelisted in MongoDB Atlas.
 
-### 6️⃣ Open in Browser  
-```bash  
-http://localhost:3000  
-```
----  
+### 2. Server Crashes on Start
+- Run `npm install` to make sure all dependencies are installed.
+- Check that your `.env` file exists and contains valid values.
+- Look at the terminal error for missing or misconfigured modules.
 
-## 🛠️ Technologies Used  
-- **Frontend:** Handlebars, HTML, CSS  
-- **Backend:** Node.js, Express.js  
-- **Database:** MongoDB Atlas  
-- **Authentication:** Express-Session  
-- **Session Storage:** MongoDB  
-- **Deployment:** Render  
+### 3. Sessions Not Persisting
+- Confirm that `connect-mongo` is installed and used in Express session middleware.
+- Make sure your MongoDB URI is correctly used for session storage.
+- Check for errors in the MongoDB session store connection.
 
----  
+### 4. CSS or Pages Not Loading
+- Ensure static assets are served correctly from the `public` directory.
+- Make sure Handlebars views are correctly placed in the `views/` directory.
+- Double-check relative paths in HTML and layout templates.
 
-## 🔮 Future Enhancements  
-🚀 **Improved UI** with React for a modern look  
-🚀 **Single Sign-On (SSO)** using Google OAuth  
-🚀 **Admin Dashboard** to manage professors & reviews  
-🚀 **Professor Profile Verification** for more reliable ratings  
-
----
+### 5. Seed Script Not Working
+- Confirm MongoDB is connected when running `npm run seed`.
+- Check the seed script for hardcoded values that may conflict with your data.
 
 ## Collaborators:
-
 - Ronak Kachalia
 - Sam Severance
 - Karan Shah
